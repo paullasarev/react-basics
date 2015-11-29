@@ -1,0 +1,10 @@
+.header {
+  background-color: #ccc;
+  height: 50px;
+
+  &__title {
+    display: inline-block;
+    line-height: 50px;
+    vertical-align: middle;
+  }
+}

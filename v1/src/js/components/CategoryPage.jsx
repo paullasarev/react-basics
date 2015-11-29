@@ -11,6 +11,9 @@ var CategoryPage = React.createClass({
   render: function () {
     return (
       <div className="page">
+        <div className="page__header">
+          <Header />
+        </div>
         <div className="page__content">
           <CategoryList categories={this.props.categories}/>
         </div>
