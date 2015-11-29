@@ -6,7 +6,7 @@ var concat = require('gulp-concat');
 var webserver = require('gulp-webserver');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
-var mkdirp = require('mkdirp');
+var del = require('del');
 var yargs = require('yargs');
 
 var dirs = {
@@ -54,10 +54,9 @@ var autoprefixerBrowsers = [
 //  'bb >= 10'
 ];
 
-var errorHandler = function(err){
-  console.log(err.message);
-  this.end();
-}
+gulp.task('clean', function () {
+  del.sync([opt.dest.root + '/*']);
+});
 
 gulp.task('html', function() {
   return gulp.src(opt.src.html.all)
@@ -72,6 +71,7 @@ gulp.task('webserver', function() {
   gulp.src(opt.dest.root)
     .pipe(webserver({
       livereload: true,
+      port:3000,
       directoryListing: {
         enable:true,
         path:opt.dest.root,
