@@ -1,5 +1,17 @@
 .category {
-  &__head {
-
+  &__name {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 20px 30px;
+  }
+  &__img {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px 10px;
+  }
+  &__description {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 20px 30px;
   }
 }
